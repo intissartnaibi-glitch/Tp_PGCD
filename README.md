@@ -18,19 +18,19 @@ ____
 ♡ 3 .exemples :
 
 # a=90 ,b=60
-90÷60=1 est  reste est 30
-60÷30=2 est  le reste =0
+90÷60=1 ;  reste est 30
+60÷30=2 ;  le reste =0
 ■ PGCD de 90÷60  est 30
 
 # a=40,b=36
-40÷36=1 est le reste =4
-36÷4=9 est le reste =0
+40÷36=1 ; le reste =4
+36÷4=9 ; le reste =0
 ■ PGCD de 40÷36 est 4 
 
 
 # a=100 , b=32
-100÷32=3 est le reste =4
-32÷4=8 est le rest =0
+100÷32=3 ;le reste =4
+32÷4=8 ;le rest =0
 ■ PGCD de 100÷32 est 4
 
 
