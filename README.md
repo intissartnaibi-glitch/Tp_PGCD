@@ -33,4 +33,5 @@ ____
 32÷4=8 est le rest =0
 ■ PGCD de 100÷32 est 4
 
+
  
