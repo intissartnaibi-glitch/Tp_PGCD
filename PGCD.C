@@ -34,3 +34,4 @@ int main() {
     printf("PGCD = %d\n", a);
     return 0;
 } 
+
