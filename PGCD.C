@@ -10,11 +10,12 @@ variable a,b ,PGCD:entier
  début
  Ecrire("Entrez deux nombres entiers")
  lire (a ,b) 
-Tant que b≠0
+Tant que b≠0 faire
  r recoit a mod b 
 a recoit b
  b recoit r
- Écrire ("le PGCD est : ",a) 
+ Écrire ("le PGCD est : ",a)
+fin tant que
 fin
 
     _______
