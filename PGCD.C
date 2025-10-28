@@ -82,5 +82,6 @@ int main() {
 } 
 
 >>>>>conclusion:
-Dans cette TP j’apprendre comment rédige l’algorithme d’euclide étape par étape avec utilisation de boucle Tant Que en algorithme, et aussi dans language C.
-cette expérience m’à aider à faire le lien entre les mathématiques et le programmation. 
+Dans ce TP, j’ai appris à rédiger l’algorithme d’Euclide étape par étape en utilisant la boucle « Tant Que » en algorithmique, ainsi qu’à l’implémenter en langage C. Cette expérience m’a permis de mieux comprendre le lien entre les mathématiques et la programmation.
+
+ 
