@@ -68,7 +68,7 @@ fin
 int main() {
 int a;
 int b;
-int c;
+int r;
 //déclaration des variables 
 
     printf("Entrez deux nombres entiers: ");
