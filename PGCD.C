@@ -66,7 +66,10 @@ fin
 #include <stdio.h>
 
 int main() {
-    int a, b, r;//déclaration des variables
+int a;
+int b;
+int c;
+//déclaration des variables 
 
     printf("Entrez deux nombres entiers: ");
     scanf("%d %d", &a, &b);
