@@ -37,21 +37,27 @@ Tant que b≠0 faire
  r recoit a mod b 
 a recoit b
  b recoit r
- Écrire ("le PGCD est : ",a)
 fin tant que
+ Écrire ("le PGCD est : ",a)
 fin
 
     _______
                      ♡ 3 .exemples :
 
-a=90 ,b=60
-90÷60=1 est reste est 30 60÷30=2 est le reste =0 ■ PGCD de 90÷60 est 30
+  ##a=90 ,b=60
+90=60×1+30
+60=30×2+0
+■ PGCD(90,60)=30
 
-a=40,b=36
-40÷36=1 est le reste =4 36÷4=9 est le reste =0 ■ PGCD de 40÷36 est 4
+  ###a=40,b=36
+40=36×1+4
+36=4×9+0
+■ PGCD(40,36)=4
 
-a=100 , b=32
-100÷32=3 est le reste =4 32÷4=8 est le rest =0 ■ PGCD de 100÷32 est 4
+       ####a=100 , b=32
+100=32×3+4
+32=4×8+0
+■PGCD(100,32)=4
 
 
 ●●●●
