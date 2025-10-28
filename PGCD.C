@@ -81,3 +81,6 @@ int main() {
     return 0;
 } 
 
+>>>>>conclusion:
+Dans cette TP j’apprendre comment rédige l’algorithme d’euclide étape par étape avec utilisation de boucle Tant Que en algorithme, et aussi dans language C.
+cette expérience m’à aider à faire le lien entre les mathématiques et le programmation. 
