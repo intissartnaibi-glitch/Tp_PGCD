@@ -1,24 +1,27 @@
  
+
  Tp_PGCD
-♡ 1.définition : le PGCD de deux nombres est le plus grand nombre qui divise les deux sans reste .
+
+
+     ♡ 1.définition : le PGCD de deux nombres est le plus grand nombre qui divise les deux sans reste .
 L’algorithme d’Euclide permet de calculer le Plus Grand Commun Diviseur (PGCD) de deux entiers naturels non nuls.
 Voici son énoncé :
 
 ---
 
-Principe de l’algorithme d’Euclide
+///Principe de l’algorithme d’Euclide
 
-Soient  a  et  b  deux entiers, avec  a \ge b > 0 .
+Soient  a  et  b  deux entiers, avec  a >=b> 0.
 Le PGCD de  a  et  b  est obtenu par divisions successives :
 
 1. On effectue la division euclidienne de  a  par  b  :
 
-a = b \times q + r \quad \text{avec } 0 \le r < b
+a = b×q + r avec 0<= r < b
 
-1. Si  r = 0 , alors  \text{PGCD}(a, b) = b .
-2. Si  r \neq 0 , on recommence avec  b  et  r  :
+1. Si  r = 0 , alors  PGCD(a, b) = b .
+2. Si  r ≠0 , on recommence avec  b  et  r  :
 
-\text{PGCD}(a, b) = \text{PGCD}(b, r)
+PGCD(a, b) = PGCD(b, r)
 
 On itère jusqu’à obtenir un reste nul.
    _____
