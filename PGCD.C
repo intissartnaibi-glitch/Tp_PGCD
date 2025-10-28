@@ -3,12 +3,12 @@
  Tp_PGCD
 
 
-     ♡ 1.définition : le PGCD de deux nombres est le plus grand nombre qui divise les deux sans reste .
+     ♡ A.définition : le PGCD de deux nombres est le plus grand nombre qui divise les deux sans reste .
 L’algorithme d’Euclide permet de calculer le Plus Grand Commun Diviseur (PGCD) de deux entiers naturels non nuls.
 Voici son énoncé :
 
 ---
-
+♡B.
 ///Principe de l’algorithme d’Euclide
 
 Soient  a  et  b  deux entiers, avec  a >=b> 0.
@@ -42,7 +42,7 @@ fin tant que
 fin
 
     _______
-                     ♡ 3 .exemples :
+                     ♡ C .exemples :
 
   ##a=90 ,b=60
 90=60×1+30
@@ -61,7 +61,7 @@ fin
 
 
 ●●●●
-          4. la programmation de PGCD par language c:
+          D. la programmation de PGCD par language c:
 
 #include <stdio.h>
 
@@ -80,7 +80,7 @@ int main() {
     printf("PGCD = %d\n", a);
     return 0;
 } 
-
+♡E.
 >>>>>conclusion:
 Dans ce TP, j’ai appris à rédiger l’algorithme d’Euclide étape par étape en utilisant la boucle « Tant Que » en algorithmique, ainsi qu’à l’implémenter en langage C. Cette expérience m’a permis de mieux comprendre le lien entre les mathématiques et la programmation.
 
