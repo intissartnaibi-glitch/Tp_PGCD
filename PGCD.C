@@ -23,7 +23,7 @@ a = b×q + r avec 0<= r < b
 
 PGCD(a, b) = PGCD(b, r)
 
-On itère jusqu’à obtenir un reste nul.
+On arrête jusqu’à obtenir un reste nul.
    _____
        ♡ 2. algorithme d’euclide :
 
