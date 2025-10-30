@@ -74,8 +74,10 @@ int r;
     printf("Entrez deux nombres entiers: ");
     scanf("%d %d", &a, &b);
 //programme pour le  PGCD de deux nombres 
+printf("\n---etape de la division euclidienne---\n");
     while (b != 0) {
-        r = a % b;//le reste
+r = a % b;//le reste
+printf("%d=%d(%d÷%d)+%d\n",a,b,a,b,r);
         a = b;//permutation de b dans a 
         b = r;//permutation de r dans b
     }
