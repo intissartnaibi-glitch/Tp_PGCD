@@ -83,8 +83,16 @@ printf("%d=%d(%d÷%d)+%d\n",a,b,a,b,r);
     }
 
     printf("PGCD = %d\n", a);
+
+    // Vérification si a et b sont premiers entre eux
+    if (a == 1) {
+        printf("Les deux nombres sont premiers entre eux.\n");
+    } else {
+        printf("Les deux nombres ne sont pas premiers entre eux.\n");
+    }
+
     return 0;
-} 
+}
 ♡E.
 >>>>>conclusion:
 Dans ce TP, j’ai appris à rédiger l’algorithme d’Euclide étape par étape en utilisant la boucle « Tant Que » en algorithmique, ainsi qu’à l’implémenter en langage C. Cette expérience m’a permis de mieux comprendre le lien entre les mathématiques et la programmation.
