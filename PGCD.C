@@ -63,36 +63,77 @@ fin
 ●●●●
           D. la programmation de PGCD par language c:
 
+
+
 #include <stdio.h>
 
-int main() {
-int a;
-int b;
-int r;
-//déclaration des variables 
-
-    printf("Entrez deux nombres entiers: ");
-    scanf("%d %d", &a, &b);
-//programme pour le  PGCD de deux nombres 
-printf("\n---etape de la division euclidienne---\n");
+int pgcd_simple(int a, int b) {
+    int r;
+    printf("\n--- Étapes du PGCD (division euclidienne) ---\n");
     while (b != 0) {
-r = a % b;//le reste
-printf("%d=%d(%d÷%d)+%d\n",a,b,a,b,r);
-        a = b;//permutation de b dans a 
-        b = r;//permutation de r dans b
+        r = a % b;
+        printf("%d = %d × (%d ÷ %d) + %d\n", a, b, a, b, r);
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+// ---------- Euclide étendu( pou trover  coefficients de Bézout) ----------
+int euclide_etendu(int a, int b, int *x, int *y) {
+    if (b == 0) {
+        *x = 1;
+        *y = 0;
+        return a;
     }
 
-    printf("PGCD = %d\n", a);
+    int x1, y1;
+    int d = euclide_etendu(b, a % b, &x1, &y1);
 
-    // Vérification si a et b sont premiers entre eux
-    if (a == 1) {
-        printf("Les deux nombres sont premiers entre eux.\n");
+    *x = y1;
+    *y = x1 - (a / b) * y1;
+
+    return d;
+}
+
+int main() {
+
+    int a, b, c;
+    printf("Entrez a, b et c (ax + by = c) : ");
+    scanf("%d %d %d", &a, &b, &c);
+    int d = pgcd_simple(a, b);
+    printf("\nPGCD(%d, %d) = %d\n", a, b, d);
+    if (c % d != 0) {
+        printf("\nComme %d ne divise pas %d → Pas de solution entiere.\n", d, c);
+        return 0;
     } else {
-        printf("Les deux nombres ne sont pas premiers entre eux.\n");
+        printf("\nComme %d divise %d → Il existe des solutions.\n", d, c);
     }
+
+    int x0, y0;
+    euclide_etendu(a, b, &x0, &y0);
+
+    printf("\n--- Coefficients de Bézout ---\n");
+    printf("%d(%d) + %d(%d) = %d\n", a, x0, b, y0, d);
+    int xp = x0 * (c / d);
+    int yp = y0 * (c / d);
+
+    printf("\n--- Solution Particuliere ---\n");
+    printf("x_p = %d × (%d/%d) = %d\n", x0, c, d, xp);
+    printf("y_p = %d × (%d/%d) = %d\n", y0, c, d, yp);
+    printf("\nSolution particulière : (x, y) = (%d, %d)\n", xp, yp);
+
+  
+    printf("\n--- Solution Generale ---\n");
+    printf("(x, y) = (%d + %d*k , %d - %d*k)   ,  k ∈ Z\n", xp, b/d, yp, a/d);
 
     return 0;
 }
+
+
+
+
+
 ♡E.
 >>>>>conclusion:
 Dans ce TP, j’ai appris à rédiger l’algorithme d’Euclide étape par étape en utilisant la boucle « Tant Que » en algorithmique, ainsi qu’à l’implémenter en langage C. Cette expérience m’a permis de mieux comprendre le lien entre les mathématiques et la programmation.
