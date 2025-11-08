@@ -67,6 +67,7 @@ fin
 
 #include <stdio.h>
 
+// ---------- PGCD simple ----------
 int pgcd_simple(int a, int b) {
     int r;
     printf("\n--- Étapes du PGCD (division euclidienne) ---\n");
@@ -79,19 +80,19 @@ int pgcd_simple(int a, int b) {
     return a;
 }
 
-// ---------- Euclide étendu( pou trover  coefficients de Bézout) ----------
-int euclide_etendu(int a, int b, int *x, int *y) {
+// ---------- Euclide Étendu (retourne x_temp et y_temp) ----------
+int euclide_etendu(int a, int b, int *x_temp, int *y_temp) {
     if (b == 0) {
-        *x = 1;
-        *y = 0;
+        *x_temp = 1;
+        *y_temp = 0;
         return a;
     }
 
     int x1, y1;
     int d = euclide_etendu(b, a % b, &x1, &y1);
 
-    *x = y1;
-    *y = x1 - (a / b) * y1;
+    *x_temp = y1;
+    *y_temp = x1 - (a / b) * y1;
 
     return d;
 }
@@ -101,31 +102,39 @@ int main() {
     int a, b, c;
     printf("Entrez a, b et c (ax + by = c) : ");
     scanf("%d %d %d", &a, &b, &c);
+
     int d = pgcd_simple(a, b);
     printf("\nPGCD(%d, %d) = %d\n", a, b, d);
+
     if (c % d != 0) {
-        printf("\nComme %d ne divise pas %d → Pas de solution entiere.\n", d, c);
+        printf("\nComme %d ne divise pas %d → Pas de solution entière.\n", d, c);
         return 0;
-    } else {
-        printf("\nComme %d divise %d → Il existe des solutions.\n", d, c);
     }
 
-    int x0, y0;
-    euclide_etendu(a, b, &x0, &y0);
+    printf("\nComme %d divise %d → Il existe des solutions.\n", d, c);
 
-    printf("\n--- Coefficients de Bézout ---\n");
-    printf("%d(%d) + %d(%d) = %d\n", a, x0, b, y0, d);
-    int xp = x0 * (c / d);
-    int yp = y0 * (c / d);
+    int x_temp, y_temp;
+    euclide_etendu(a, b, &x_temp, &y_temp);
 
-    printf("\n--- Solution Particuliere ---\n");
-    printf("x_p = %d × (%d/%d) = %d\n", x0, c, d, xp);
-    printf("y_p = %d × (%d/%d) = %d\n", y0, c, d, yp);
-    printf("\nSolution particulière : (x, y) = (%d, %d)\n", xp, yp);
+    
+    int x_p = x_temp * (c / d);
+    int y_p = y_temp * (c / d);
 
-  
+    printf("\n--- Solution Particulière ---\n");
+    printf("x = %d\n", x_p);
+    printf("y = %d\n", y_p);
+
     printf("\n--- Solution Generale ---\n");
-    printf("(x, y) = (%d + %d*k , %d - %d*k)   ,  k ∈ Z\n", xp, b/d, yp, a/d);
+    printf("(x, y) = (%d + %d*k , %d - %d*k)   ,  k ∈ Z\n", x_p, b/d, y_p, a/d);
+
+    
+    int alpha = x_temp;
+    int beta = y_temp;
+
+    printf("\n--- Coefficients de Bézout (α et β) ---\n");
+    printf("α = %d\n", alpha);
+    printf("β = %d\n", beta);
+    printf("%d(%d) + %d(%d) = %d\n", a, alpha, b, beta, d);
 
     return 0;
 }
