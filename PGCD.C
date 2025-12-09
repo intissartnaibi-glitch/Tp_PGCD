@@ -25,7 +25,7 @@ PGCD(a, b) = PGCD(b, r)
 
 On arrête jusqu’à obtenir un reste nul.
    _____
-       ♡ 2. algorithme d’euclide :
+       ♡ C. algorithme d’euclide :
 
 
  algorithme d’euclide 
@@ -41,8 +41,35 @@ fin tant que
  Écrire ("le PGCD est : ",a)
 fin
 
+
+
+    ♡ D. calcule le PGCD:
+
+
+
+#include <stdio.h>
+
+int pgcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int x, y;
+
+    printf("Entrez deux nombres : ");
+    scanf("%d %d", &x, &y);
+
+    printf("Le PGCD de %d et %d est : %d\n", x, y, pgcd(x, y));
+
+    return 0;
+}
     _______
-                     ♡ C .exemples :
+                     ♡ E .exemples :
 
   ## exemple 1: a=90 ,b=60
 90=60×1+30
@@ -64,7 +91,7 @@ fin
           
 
 
-♡E.
+♡F.
 >>>>>conclusion:
 Dans ce TP, j’ai appris à rédiger l’algorithme d’Euclide étape par étape en utilisant la boucle « Tant Que » en algorithmique, ainsi qu’à l’implémenter en langage C. Cette expérience m’a permis de mieux comprendre le lien entre les mathématiques et la programmation.
 
