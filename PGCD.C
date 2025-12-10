@@ -43,18 +43,27 @@ fin
 
 
 
-    ♡ D. calcule le PGCD:
-
+    ♡ D. calcule le pgcd:
 
 
 #include <stdio.h>
 
 int pgcd(int a, int b) {
+    int etape = 1;
+
     while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
+        int q = a / b;      // quotient
+        int r = a % b;      // reste
+
+        // Afficher l'étape
+        printf("Étape %d : %d = %d * %d + %d\n", etape, a, b, q, r);
+
+        // Mise à jour
+        a = b;
+        b = r;
+        etape++;
     }
+
     return a;
 }
 
@@ -64,10 +73,18 @@ int main() {
     printf("Entrez deux nombres : ");
     scanf("%d %d", &x, &y);
 
-    printf("Le PGCD de %d et %d est : %d\n", x, y, pgcd(x, y));
+    printf("\n--- Calcul du PGCD ---\n");
+    int resultat = pgcd(x, y);
+
+    printf("\nLe PGCD de %d et %d est : %d\n", x, y, resultat);
 
     return 0;
 }
+
+
+
+
+
     _______
                      ♡ E .exemples :
 
